@@ -1,0 +1,63 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "An appointment booked by a patient with a doctor",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "doctorId": { "type": "string" },
+        "doctorName": { "type": "string" },
+        "departmentId": { "type": "string" },
+        "departmentName": { "type": "string" },
+        "date": { "type": "string" },
+        "timeSlot": { "type": "string" },
+        "patientName": { "type": "string" },
+        "patientPhone": { "type": "string" },
+        "patientEmail": { "type": "string" },
+        "reason": { "type": "string" },
+        "status": { "type": "string", "enum": ["scheduled", "completed", "cancelled"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": [
+        "id",
+        "userId",
+        "doctorId",
+        "doctorName",
+        "departmentId",
+        "departmentName",
+        "date",
+        "timeSlot",
+        "patientName",
+        "patientPhone",
+        "patientEmail",
+        "status",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile document"
+    },
+    "/bookings/{bookingId}": {
+      "schema": "Booking",
+      "description": "Medical appointment documents"
+    }
+  }
+}

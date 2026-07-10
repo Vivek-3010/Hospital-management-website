@@ -1,0 +1,6 @@
+{
+  "name": "NovaCare Medical Center",
+  "description": "A modern, state-of-the-art hospital website featuring comprehensive department overviews, doctor rosters, and an interactive appointment booking system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
